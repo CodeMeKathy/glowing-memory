@@ -1,0 +1,6 @@
+uses: soichisumi/issue-copy-action@v0.2.0
+with:
+  keyword: "/copy"
+  targetRepository: the-collab-lab/smart-shopping-list
+  githubToken: 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
+  contentOfNewIssue: 'prefix of newly created issue'
