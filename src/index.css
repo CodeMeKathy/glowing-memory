@@ -16,20 +16,8 @@
 	--color-text: var(--color-white);
 }
 
-@media screen and (prefers-color-scheme: light) {
-	:root {
-		--color-accent: var(--color-cobalt-blue);
-		--color-bg: var(--color-white);
-		--color-bg-well: var(--color-gray-light);
-		--color-text: var(--color-black);
-	}
-}
-
-:root.theme-light {
-	--color-accent: var(--color-cobalt-blue);
-	--color-bg: var(--color-white);
-	--color-bg-well: var(--color-gray-light);
-	--color-text: var(--color-black);
+ul {
+	padding: 0;
 }
 
 *,
@@ -64,7 +52,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+h1,
+h2,
+h3 {
+	display: flex;
+	justify-content: center;
+}
 
+/* Code Stylings */
 code {
 	--color-bg: var(--color-gray-dark);
 	--color-text: var(--color-accent);
@@ -79,6 +74,23 @@ code {
 	padding: 0.15em 0.15em;
 }
 
+/* User Theme Settings */
+@media screen and (prefers-color-scheme: light) {
+	:root {
+		--color-accent: var(--color-cobalt-blue);
+		--color-bg: var(--color-white);
+		--color-bg-well: var(--color-gray-light);
+		--color-text: var(--color-black);
+	}
+}
+
+:root.theme-light {
+	--color-accent: var(--color-cobalt-blue);
+	--color-bg: var(--color-white);
+	--color-bg-well: var(--color-gray-light);
+	--color-text: var(--color-black);
+}
+
 @media screen and (prefers-color-scheme: light) {
 	code {
 		--color-bg: var(--color-gray-light);
@@ -87,8 +99,4 @@ code {
 
 :root.theme-light code {
 	--color-bg: var(--color-gray-light);
-}
-
-ul {
-	padding: 0;
 }
