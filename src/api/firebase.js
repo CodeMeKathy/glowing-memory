@@ -10,6 +10,8 @@ import { getFutureDate } from '../utils';
  *
  * @see https://firebase.google.com/docs/firestore/query-data/listen
  */
+
+//// Fetch ListItems from Firestore Database
 export function streamListItems(listId, handleSuccess) {
 	const listCollectionRef = collection(db, listId);
 	return onSnapshot(listCollectionRef, handleSuccess);
@@ -27,19 +29,21 @@ export function getItemData(snapshot) {
 	 * document references. We use `.map()` to iterate over them.
 	 * @see https://firebase.google.com/docs/reference/js/firestore_.documentsnapshot
 	 */
+	console.log({ snapshot });
 	return snapshot.docs.map((docRef) => {
 		/**
 		 * We call the `.data()` method to get the data
 		 * out of the referenced document
 		 */
 		const data = docRef.data();
+		console.log({ data });
 
 		/**
 		 * The document's ID is not part of the data, but it's very useful
 		 * so we get it from the document reference.
 		 */
 		data.id = docRef.id;
-
+		console.log({ data });
 		return data;
 	});
 }
@@ -51,6 +55,8 @@ export function getItemData(snapshot) {
  * @param {string} itemData.itemName The name of the item.
  * @param {number} itemData.daysUntilNextPurchase The number of days until the user thinks they'll need to buy the item again.
  */
+
+//// Save new item using "addItem" with information database!
 export async function addItem(listId, { itemName, daysUntilNextPurchase }) {
 	const listCollectionRef = collection(db, listId);
 	// TODO: Replace this call to console.log with the appropriate
@@ -66,6 +72,7 @@ export async function addItem(listId, { itemName, daysUntilNextPurchase }) {
 	});
 }
 
+//// Save user item updated information to the database using "updateItem" !
 export async function updateItem() {
 	/**
 	 * TODO: Fill this out so that it uses the correct Firestore function
@@ -74,6 +81,7 @@ export async function updateItem() {
 	 */
 }
 
+//// Remove user selected item information from the database using "deleteItem" !
 export async function deleteItem() {
 	/**
 	 * TODO: Fill this out so that it uses the correct Firestore function
