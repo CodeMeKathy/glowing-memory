@@ -19,7 +19,7 @@ export function App() {
 	 * `listToken` is `my test list` by default so you can see the list
 	 * of items that was pre-populated for this project.
 	 *
-	 * 	// TODO: You'll later set it to `null` by default (since new users do not have tokens), and use `setListToken` when you allow a user to create and join a new list.
+	 * 	// TODO:: ->Set to `null` by default (since new users do not have tokens), and use `setListToken` when you allow a user to create and join a new list.
 	 */
 	const [listToken, setListToken] = useStateWithStorage(
 		// null,
@@ -39,7 +39,7 @@ export function App() {
 		 */
 		return streamListItems(listToken, (snapshot) => {
 			/**
-			 * 	// TODO: read the documents in the snapshot and do some work on them, so we can save them in our React state.
+			 * 	// TODO:: -> Read the documents in the snapshot and do some work on them, so we can save them in our React state.
 			 *
 			 * Refer to `api/firebase.js`
 			 */
@@ -60,13 +60,7 @@ export function App() {
 					/>
 					<Route
 						path="/list"
-						element={
-							<List
-								listToken={listToken}
-								data={data}
-								// listToken={listToken}
-							/>
-						}
+						element={<List listToken={listToken} data={data} />}
 					/>
 					<Route path="/add-item" element={<AddItem listToken={listToken} />} />
 				</Route>
