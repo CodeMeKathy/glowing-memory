@@ -4,7 +4,7 @@ import { ListItem } from '../components';
 
 //* Access and Render User's ShoppingList
 export function List({ data }) {
-	console.log({ data });
+	//* Access the Firebase database passed down
 	let listArray = data;
 	console.log({ listArray });
 
