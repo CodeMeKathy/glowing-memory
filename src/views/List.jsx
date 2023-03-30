@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { ListItem } from '../components';
 
-//* Access and Render User's ShoppingList
 export function List({ data }) {
 	//* Access the Firebase database passed down
 	let listArray = data;
@@ -15,7 +14,7 @@ export function List({ data }) {
 			</h2>
 			<p></p>
 			<ul>
-				{/* If the imported data array length is not greater than zero (0), i.e. is empty, render a message to the user else render the `<ListItem/>` component */}
+				{/* If the imported data array length is not greater than zero (0), i.e. is 						empty, render a message to the user else render the `<ListItem/>` component */}
 				{Object.values(listArray).length > 0 ? (
 					<ul>
 						{Object.values(listArray).map((listArrayItem, i) => {
